@@ -37,8 +37,18 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
+@function calculateRem($size){
+  $remSize : $size / 10 px;
+  @return #{$return}rem;
+}
+
+@mixin fontSize($size){
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
 h1 {
-  font-size: 2em;
+  @include fontSize(2em);
   margin: 0.67em 0;
 }
 
